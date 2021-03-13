@@ -13,10 +13,10 @@ weatherForm.addEventListener('submit', (e) => {
 
   const formData = new FormData(weatherForm);
   const cityData = Object.fromEntries(formData);
-  console.log('searching for weather in ', cityData);
+  // console.log('searching for weather in ', cityData);
 
   const cityDataValue = Object.values(cityData);
-  console.log(cityDataValue[0]);
+  // console.log(cityDataValue[0]);
 
   fetchWeather(cityDataValue);
 });
@@ -35,7 +35,7 @@ async function fetchWeather(cityDataValue) {
     if (response.ok) {
       // pass weather we receive from the server to render function
       const weather = await response.json();
-      console.log('weather response is', weather);
+      // console.log('weather response is', weather);
 
       // Shape the data
       const options = {
@@ -64,7 +64,7 @@ async function fetchWeather(cityDataValue) {
           optionsTime,
         ),
       };
-      console.log({ weatherData });
+      // console.log({ weatherData });
       renderWeatherList(weatherData);
     } else {
       throw new Error(response);

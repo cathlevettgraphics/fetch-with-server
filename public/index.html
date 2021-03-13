@@ -18,6 +18,7 @@
   <title>How's your day looking?</title>
   <!-- JS -->
   <script src="./scripts/weather.js" type="module"></script>
+  <script src="./scripts/food.js" type="module"></script>
 </head>
 
 <body>
@@ -54,17 +55,6 @@
 
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
         <div class="target-weather" id="target-weather"></div>
       </div>
 
@@ -98,10 +88,10 @@
 
           <div class="form-container">
 
-            <form type="submit">
-              <label for="search-news" class="search-food-label">Search food</label>
-              <input type="text" name="search-food" id="search-food" placeholder="Search for food"
-                class="search-food-input">
+            <form name="food-form">
+              <label for="search" class="search-food-label">Search food</label>
+
+              <input type="text" name="search" id="search" placeholder="Search for food" class="search-food-input">
               <button class="btn btn-food" id="btn-food" type="submit">Enter</button>
             </form>
 
