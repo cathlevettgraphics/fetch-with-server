@@ -3,36 +3,128 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
-    integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
-    crossorigin="anonymous" />
+  <!-- Normalise -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.css">
+  <!-- Generics -->
   <link rel="stylesheet" href="./styles/generics.css">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="./fonts/jetBrains.css">
+  <!-- Font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!-- Style -->
   <link rel="stylesheet" href="./styles/style.css">
 
-  <title>weather-search</title>
-  <script src="./scripts/main.js" defer type="module"></script>
+  <title>How's your day looking?</title>
+  <!-- JS -->
+  <script src="./scripts/weather.js" type="module"></script>
 </head>
 
 <body>
-  <h1>check your local forecast</h1>
 
-  <form name="weather-form">
+  <header>
+    <nav class="nav nav-top">
+      <div class="main-logo">
+        <p class="main-logo-text"><a href="#" class="link-top-page">What's happening out there?</a></p>
+      </div>
+    </nav>
 
-    <div class="weather-search">
-      <label for="search">enter city</label>
-      <input type="text" id="search" name="search">
+    <div class="header-wrapper">
+      <div class="header-block">
+        <h1 class="header-text">How's your day looking?</h1>
+        <p class="header-strap">Get up to speed now and see what's in store today ...</p>
+      </div>
     </div>
+  </header>
 
-    <div class="btn-sumbit">
-      <button class="submit">submit</button>
-    </div>
+  <main>
+    <section class="section-container weather">
+      <div class="weather wrapper-container">
+        <i class="fas fa-cloud-sun-rain"><span class="sr-only">weather icon</span></i>
+        <h3 class="section-head">What's it like outside right now?</h3>
+        <div class="form-container">
 
-  </form>
+          <form name="weather-form">
+            <label for="search">Search weather</label>
 
-  <div class="target-weather" id="target-weather"></div>
+            <input type="text" name="search" id="search" class="search-city-input" placeholder="Search for a city">
+
+            <button class="btn btn-weather" id="btn-weather" type="submit">Enter</button>
+          </form>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="target-weather" id="target-weather"></div>
+      </div>
+
+    </section>
+
+    <section class="section-container news">
+      <div class="news wrapper-container">
+        <i class="fas fa-globe-europe"><span class="sr-only">globe icon</span></i>
+        <h3 class="section-head">What's happening outside right now?</h3>
+
+        <div class="form-container">
+
+          <form type="submit">
+            <label for="search-news" class="search-news-label">Search news</label>
+            <input type="text" name="search-news" id="search-news" placeholder="Search for news"
+              class="search-news-input">
+            <button class="btn btn-news" id="btn-news" type="submit">Enter</button>
+          </form>
+
+        </div>
+
+        <div class="target-news" id="target-news"></div>
+      </div>
+
+    </section>
+    <section>
+      <div class="section-container food">
+        <div class="food wrapper-container">
+          <i class="fas fa-pizza-slice"><span class="sr-only">food icon</span></i>
+          <h3 class="section-head">What should I make for lunch?</h3>
+
+          <div class="form-container">
+
+            <form type="submit">
+              <label for="search-news" class="search-food-label">Search food</label>
+              <input type="text" name="search-food" id="search-food" placeholder="Search for food"
+                class="search-food-input">
+              <button class="btn btn-food" id="btn-food" type="submit">Enter</button>
+            </form>
+
+          </div>
+
+          <div class="target-food" id="target-food"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <nav class="nav nav-bottom">
+      <div class="main-logo">
+        <p class="main-logo-text"><a href="#" class="link-top-page">what's happening out there?</a></p>
+        <p class="main-logo-sub-text"><small class="main-logo-sub-text">&copy; 2020 <a
+              href="https://cathlevett-graphics.netlify.app/" class="site-link"> cathlevettgraphics</a></small></p>
+      </div>
+    </nav>
+  </footer>
 
 </body>
 

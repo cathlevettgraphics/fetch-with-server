@@ -1,3 +1,9 @@
+/*************************
+ *
+ * WEATHER APP + LOCAL SERVER HOOKUP
+ *
+ *************************/
+
 // get form
 const weatherForm = document.forms['weather-form'];
 
@@ -68,12 +74,7 @@ async function fetchWeather(cityDataValue) {
   }
 }
 
-/********************
- *
- * RENDER  DATA FUNCTION
- *
- ********************/
-
+// render the data
 export let mountNodeWeather = document.getElementById('target-weather');
 
 // Data passed to this function inside the fetch call

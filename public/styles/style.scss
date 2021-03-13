@@ -1,0 +1,468 @@
+// colors
+$melon: hsla(5, 100%, 81%, 1);
+$melon-tint: hsla(5, 100%, 81%, 0.2);
+$eggshell: hsla(46, 74%, 92%, 1);
+$eggshell-tint: hsla(46, 74%, 92%, 0.4);
+$aero-blue: hsla(168, 69%, 84%, 1);
+$powder-blue: hsla(188, 45%, 78%, 1);
+$black-coral: hsla(222, 10%, 41%, 1);
+$grey-coral: hsla(222, 10%, 41%, 0.05);
+$white: hsla(0, 100%, 100%, 1);
+
+// breakpoints
+$desktop: 961px;
+
+body {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.nav.nav-top {
+  background-color: $black-coral;
+  width: 100vw;
+  margin-block-end: 20px;
+
+  .main-logo {
+    color: $white;
+    margin-block-end: 0;
+  }
+
+  .main-logo-text {
+    padding: 20px 20px 20px 20px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-block-end: 0;
+  }
+}
+
+@media (min-width: $desktop) {
+  .nav.nav-top {
+    margin-block-end: 40px;
+  }
+}
+
+// Header – style to be worked on
+
+.header-wrapper {
+  max-inline-size: 100vw;
+}
+
+.header-block {
+  max-inline-size: 335px;
+  margin: 0 auto;
+  margin-block-end: 40px;
+}
+
+@media (min-width: $desktop) {
+  .header-block {
+    max-inline-size: 720px;
+  }
+}
+
+.header-text {
+  font-size: 6.4rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+@media (min-width: $desktop) {
+  .header-text {
+    font-size: 7.7rem;
+    width: 620px;
+  }
+}
+
+.header-strap {
+  font-size: 2rem;
+  line-height: 1.6;
+}
+
+@media (min-width: $desktop) {
+  .header-strap {
+    font-size: 2.2rem;
+    max-inline-size: 400px;
+    line-height: 1.6;
+  }
+}
+
+// Sections
+.section-container.weather {
+  max-inline-size: 100vw;
+  background-color: $eggshell-tint;
+  padding: 40px 0;
+  margin-block-end: 40px;
+}
+
+.section-container.food {
+  max-inline-size: 100vw;
+  background-color: $eggshell-tint;
+  padding: 40px 0;
+}
+
+.wrapper-container {
+  width: 335px;
+  margin: 0 auto;
+  margin-block-end: 20px;
+}
+
+@media (min-width: $desktop) {
+  .wrapper-container {
+    width: 620px;
+  }
+}
+
+.section-head {
+  font-size: 2.1rem;
+  line-height: 1.4;
+  margin-block-end: 20px;
+}
+
+@media (min-width: $desktop) {
+  .section-head {
+    font-size: 2.6rem;
+  }
+}
+
+.search-city-label,
+.search-news-label,
+.search-food-label {
+  display: block;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-block-end: 12px;
+}
+
+@media (min-width: $desktop) {
+  .search-city-label,
+  .search-news-label,
+  .search-food-label {
+    font-size: 1.6rem;
+    margin-block-end: 10px;
+  }
+}
+
+input.search-city-input,
+input.search-news-input,
+input.search-food-input {
+  border: 2px solid $black-coral;
+  width: 100%;
+  padding: 20px 20px 20px 10px;
+  margin-block-end: 12px;
+}
+
+input:focus {
+  background-color: $melon-tint;
+  outline: none;
+}
+
+@media (min-width: $desktop) {
+  input.search-city-input,
+  input.search-news-input,
+  input.search-food-input {
+    border: 2px solid $black-coral;
+    width: 50%;
+    padding: 20px 20px 20px 10px;
+    margin-block-end: 20px;
+  }
+}
+@media (min-width: $desktop) {
+  input::placeholder {
+    color: $black-coral;
+    font-size: 1.6rem;
+  }
+}
+
+.btn {
+  border: 0;
+  text-align: left;
+  width: 50%;
+  padding: 12px;
+  color: $white;
+  background-color: $black-coral;
+  margin-block-end: 20px;
+  font-size: 1.6rem;
+}
+
+.btn:hover,
+.btn:focus {
+  transition: 0.3;
+  background-color: $melon;
+  color: $black-coral;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:active {
+  background-color: $black-coral;
+  transform: scale(0.96);
+}
+
+// API call weather result
+
+i.fas {
+  font-size: 6rem;
+  margin-block-end: 20px;
+  color: $black-coral;
+}
+
+@media (min-width: $desktop) {
+  i.fas {
+    font-size: 7rem;
+  }
+}
+
+.city-weather-wrapper {
+  .city-name {
+    font-size: 2.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: $melon;
+    margin-block-end: 20px;
+  }
+  .city-date {
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 2px solid $black-coral;
+    padding-block-end: 20px;
+    margin-block-end: 20px;
+  }
+
+  .city-weather,
+  .city-temp,
+  .city-feels-like {
+    font-size: 1.6rem;
+    font-weight: 900;
+  }
+
+  .city-sunset {
+    font-size: 1.6rem;
+    font-weight: 900;
+    border-bottom: 2px solid $black-coral;
+    padding-block-end: 20px;
+  }
+
+  .weather-highlight {
+    color: $melon;
+  }
+}
+
+@media (min-width: $desktop) {
+  .city-weather-wrapper {
+    .city-name {
+      font-size: 3.4rem;
+    }
+    .city-date {
+      font-size: 1.6rem;
+    }
+
+    .city-weather,
+    .city-temp,
+    .city-feels-like {
+      font-size: 1.8rem;
+      margin-block-end: 30px;
+    }
+
+    .city-sunset {
+      font-size: 1.8rem;
+    }
+
+    .weather-highlight {
+      color: $melon;
+    }
+  }
+}
+
+// API news articles
+
+.news-wrapper {
+  .news-headline {
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 1.4;
+    margin-block-end: 20px;
+  }
+  .news-content {
+    font-size: 1.8rem;
+    line-height: 1.8;
+  }
+  .news-link {
+    font-weight: 1rem;
+    font-weight: 900;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    display: block;
+    margin-block-end: 40px;
+
+    &:hover {
+      color: $melon;
+    }
+  }
+
+  .news-image {
+    width: 100%;
+    margin-block-end: 20px;
+  }
+}
+
+@media (min-width: $desktop) {
+  .news-wrapper {
+    .news-headline {
+      font-size: 3rem;
+    }
+    .news-content {
+      font-size: 1.6rem;
+      line-height: 1.8;
+    }
+    .news-link {
+      font-size: 1.3rem;
+
+      display: block;
+      margin-block-end: 40px;
+
+      &:hover {
+        color: $melon;
+      }
+    }
+
+    .news-image {
+      width: 100%;
+      margin-block-end: 20px;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .section-container.news {
+    width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: $desktop) {
+  .wrapper-container {
+    width: 720px;
+  }
+}
+
+// Food list
+
+.food-headline {
+  font-size: 2.6rem;
+  margin-block-end: 10px;
+}
+.food-image {
+  margin-block-end: 20px;
+}
+
+.food-link {
+  font-weight: 1rem;
+  font-weight: 900;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  display: block;
+  margin-block-end: 40px;
+
+  &:hover {
+    color: $melon;
+  }
+}
+
+@media (min-width: $desktop) {
+  .food-headline {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: $desktop) {
+  .food-link {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: $desktop) {
+  .food-list-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+.nav.nav-bottom {
+  background-color: $black-coral;
+  width: 100vw;
+
+  .main-logo {
+    color: $white;
+    padding: 12px 20px 12px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .main-logo-text {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    margin-block-end: 10px;
+  }
+}
+
+.main-logo-sub-text {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: $desktop) {
+  .main-logo-sub-text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: $desktop) {
+  .nav.nav-bottom {
+    background-color: $black-coral;
+    width: 100vw;
+
+    .main-logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main-logo-text {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+  }
+}
+
+.site-link {
+  text-decoration: none;
+}
+
+.site-link:hover {
+  color: $melon;
+  font-weight: 900;
+}
+
+.link-top-page {
+  text-decoration: none;
+}
+
+.link-top-page:hover {
+  color: $melon;
+  font-weight: 900;
+}

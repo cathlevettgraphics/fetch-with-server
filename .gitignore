@@ -159,6 +159,7 @@ dist
 
 # API keys
 api-key.js
+public/_archive
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,node
 
