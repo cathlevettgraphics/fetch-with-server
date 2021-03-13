@@ -19,6 +19,7 @@
   <!-- JS -->
   <script src="./scripts/weather.js" type="module"></script>
   <script src="./scripts/food.js" type="module"></script>
+  <script src="./scripts/news.js" type="module"></script>
 </head>
 
 <body>
@@ -67,10 +68,9 @@
 
         <div class="form-container">
 
-          <form type="submit">
-            <label for="search-news" class="search-news-label">Search news</label>
-            <input type="text" name="search-news" id="search-news" placeholder="Search for news"
-              class="search-news-input">
+          <form name="news-form">
+            <label for="search" class="search-news-label">Search news</label>
+            <input type="text" name="search" id="search" placeholder="Search for news" class="search-news-input">
             <button class="btn btn-news" id="btn-news" type="submit">Enter</button>
           </form>
 
