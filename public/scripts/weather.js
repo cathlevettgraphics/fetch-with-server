@@ -52,6 +52,7 @@ async function fetchWeather(cityDataValue) {
       // select the data
       const weatherData = {
         city: weather.city.name,
+        code: weather.cod,
         date: new Date(weather.list[0].dt_txt).toLocaleDateString(
           undefined,
           options,
@@ -64,7 +65,7 @@ async function fetchWeather(cityDataValue) {
           optionsTime,
         ),
       };
-      // console.log({ weatherData });
+      console.log('weatherData', weatherData);
       renderWeatherList(weatherData);
     } else {
       throw new Error(response);
@@ -78,14 +79,18 @@ async function fetchWeather(cityDataValue) {
 export let mountNodeWeather = document.getElementById('target-weather');
 
 // Data passed to this function inside the fetch call
-export function renderWeatherList(data) {
-  const list = document.createElement('ul');
-  // build the list
-  const li = document.createElement('li');
+export function renderWeatherList(weatherData) {
+  // Todo build visual error feedback for user
+  if (weatherData.code !== '200') {
+    mountNodeWeather.innerHTML = 'City not found ... please search again';
+  } else {
+    const list = document.createElement('ul');
+    // build the list
+    const li = document.createElement('li');
 
-  const { city, date, weather, tempC, feelsLikeTempC, sunset } = data;
+    const { city, date, weather, tempC, feelsLikeTempC, sunset } = weatherData;
 
-  li.innerHTML = `
+    li.innerHTML = `
       <div class="city-weather-wrapper">
         <h3 class="city-name">${city}</h3>
         <p class="city-date">${date}</p>
@@ -96,9 +101,10 @@ export function renderWeatherList(data) {
       </div>
       `;
 
-  list.innerHTML = '';
-  list.append(li);
+    list.innerHTML = '';
+    list.append(li);
 
-  mountNodeWeather.innerHTML = '';
-  mountNodeWeather.append(list);
+    mountNodeWeather.innerHTML = '';
+    mountNodeWeather.append(list);
+  }
 }
